@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if Config.env == Environment.Production{
+            Crittercism.enableWithAppID("96ddf4f5d59048898ec8847b3c37d19c00555300")
+        }
+        
+        
         return true
     }
 
@@ -48,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ColorLog.bluelight("*** applicationWillTerminate ***")
     }
     
-    
+        
     
 }
 

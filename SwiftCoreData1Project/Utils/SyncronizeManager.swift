@@ -28,8 +28,6 @@ class SyncronizeManager {
     private var syncServices: [SyncServiceStatus]
 
     private var manyCompletedWithSuccess: Int
-
-    private var connection: ConnectionNotification?
     
     private var apn: ApplicationNotification?
 
@@ -97,12 +95,13 @@ class SyncronizeManager {
 
     // sincornizzo i servizi in base allo stato elencato nell'enum SyncStatus
     private func syncAll(){
-
-        guard self.manyCompletedWithSuccess < self.syncServices.count else {
-            ColorLog.gray("ConnectionNotification delloc")
-            self.connection = nil
+        
+        guard manyCompletedWithSuccess < syncServices.count else {
+            ColorLog.bluelight("All Services are Sync")
             return
         }
+        
+        ColorLog.bluelight("Sync All Services")
         
         fillCoreDataForCustomers({ (queue, error) in
 
@@ -143,21 +142,29 @@ class SyncronizeManager {
     
     func syncornizedAllServices(){
     
-        ColorLog.bluelight("Sync All Services")
+        // verifico se sono connesso alla rete nel momento in cui faccio partire la sincornizzazione
+        // eventualmente non sono online, resto in attesa di tornarci
         
-        if self.connection == nil{
+        let net = NetworkReachabilityManager()
+        
+        net?.listener = {status in
             
-            connection = ConnectionNotification()
-            
-            connection?.change(
-                connected: {
-                    self.syncAll()
-                },
-                disconnect: {
-            })
+            if  net?.isReachable ?? false {
+                
+                ColorLog.gray("network connection")
+                self.syncAll()
+            }
+            else {
+                ColorLog.gray("network no connection")
+            }
             
         }
         
+        net?.startListening()
+        ColorLog.gray("Network start listener...")
+        
+        
+        // Avvio il download del file che gestice in automatico la mancata connessione
         downloadFile({ (fileName,error) in
             
             guard error == nil else{

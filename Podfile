@@ -5,9 +5,10 @@ use_frameworks!
 pod 'Alamofire'#, '~> 3.0'
 pod 'AlamofireImage'#, '~> 2.0'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'CrittercismSDK'
 pod 'SwiftLoader'
 pod 'AMScrollingNavbar'
-pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
+#pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
 
 target 'SwiftCoreData1Project' do
 end

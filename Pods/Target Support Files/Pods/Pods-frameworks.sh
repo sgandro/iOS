@@ -87,7 +87,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AMScrollingNavbar.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/AlamofireImage.framework"
-  install_framework "Pods/ReachabilitySwift.framework"
   install_framework "Pods/SwiftLoader.framework"
   install_framework "Pods/SwiftyJSON.framework"
 fi
@@ -95,7 +94,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AMScrollingNavbar.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/AlamofireImage.framework"
-  install_framework "Pods/ReachabilitySwift.framework"
   install_framework "Pods/SwiftLoader.framework"
   install_framework "Pods/SwiftyJSON.framework"
 fi

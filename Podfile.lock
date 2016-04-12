@@ -3,7 +3,7 @@ PODS:
   - AlamofireImage (2.3.1):
     - Alamofire (~> 3.2)
   - AMScrollingNavbar (2.0.14)
-  - ReachabilitySwift (2.3.3)
+  - CrittercismSDK (5.5.1)
   - SwiftLoader (0.2.5)
   - SwiftyJSON (2.3.2)
 
@@ -11,20 +11,15 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AMScrollingNavbar
-  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
+  - CrittercismSDK
   - SwiftLoader
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
-  ReachabilitySwift:
-    :git: https://github.com/ashleymills/Reachability.swift
   SwiftyJSON:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
-  ReachabilitySwift:
-    :commit: fa90df50c04f5743fbdf643cbe8d10562d75673d
-    :git: https://github.com/ashleymills/Reachability.swift
   SwiftyJSON:
     :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
@@ -33,7 +28,7 @@ SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   AlamofireImage: e52336282757bbe1644f075d6cb85f19c891f939
   AMScrollingNavbar: be1de69f46cea4667026400db6cb22e783f9533d
-  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  CrittercismSDK: 5720de59e172ffd2149a634a9259672b9fadb7ed
   SwiftLoader: 12d7a6f661f5e9a2c9a72003e7dd6162f4ff0cc4
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
